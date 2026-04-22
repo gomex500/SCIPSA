@@ -1,0 +1,33 @@
+@api = http://127.0.0.1:5000/
+
+#
+GET {{api}}/
+
+
+###registro de usuario
+POST {{api}}/signin
+Content-Type: application/json
+
+{
+    "nombre": "Freddy",
+    "apellido": "Gomez",
+    "userName":"gomex",
+    "telefono":82181663,
+    "email": "gomex6798ferw@gmail.com",
+    "password": "FreddyGomez@500"
+}
+
+###logeo de usuarios
+POST {{api}}/login
+Content-Type: application/json
+
+{
+    "userName": "gomex",
+    "password": "FreddyGomez@500"
+}
+
+###obtener los usuarios
+GET {{api}}/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJGcmVkZHkiLCJhcGVsbGlkbyI6IkdvbWV6IiwidXNlck5hbWUiOiJnb21leCIsInRlbGVmb25vIjo4MjE4MTY2MywiZW1haWwiOiJnb21leDY3OThmZXJ3QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEyJFJMekRiVzI5VG53UmFVTFBRLkVzNC5MZG8yS2JDSlkzajBzRjgxR2M1d29LMDFBWTdFWm5PIiwiZXhwIjoxNzc2OTg2OTY1fQ.tMQGX9lal1Zfc4mS6ozg7F5z83JP1OU9_-d_gwSi_pU
+
+###eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJGcmVkZHkiLCJhcGVsbGlkbyI6IkdvbWV6IiwidXNlck5hbWUiOiJnb21leCIsInRlbGVmb25vIjo4MjE4MTY2MywiZW1haWwiOiJnb21leDY3OThmZXJ3QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEyJHp1RjRmQVk5d2xEUndFdnFUb0hobE8wNDJCWXcuVEhOaHoydzljTHJJWkZJYXZYSkNvMjFtIiwiZXhwIjoxNzcwODU1OTg1fQ.FdG3jmy7Kq-f1T3WDr6ahODjTzO7IVl-g89uGz1ysZo
