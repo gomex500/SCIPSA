@@ -16,7 +16,7 @@ def verificar_token():
         token = request.headers['Authorization'].split(" ")[1]
         validar_token(token, output=False)
     except:
-        return jsonify({"Menssage":"Error de autenticacion, no estas autorizado"})
+        return jsonify({"message": "No autorizado"}), 401
 
 
 #ruta mostrar usuarios

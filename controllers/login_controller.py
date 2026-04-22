@@ -11,13 +11,13 @@ def validacion_email(coll, userName):
         return True
     return False
 
-#validar si el password existe
-def validar_password(coll, password):
-    passEncriptado = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
-    doc = coll.find_one({'password': passEncriptado})
-    if doc:
-        return True
-    return False
+# #validar si el password existe
+# def validar_password(coll, password):
+#     passEncriptado = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+#     doc = coll.find_one({'password': passEncriptado})
+#     if doc:
+#         return True
+#     return False
 
 
 #controllador de registro de usuarios
@@ -45,8 +45,7 @@ def signin(collections):
             "apellido": user_instance.apellido,
             "userName": user_instance.userName,
             "telefono": user_instance.telefono,
-            "email": user_instance.email,
-            "password": user_instance.password
+            "email": user_instance.email
         }
         token = crear_token(data=user_data)
         return jsonify({'id':str(id), "token":token.decode('utf-8')})
@@ -75,8 +74,7 @@ def login(collections):
             "apellido": user_doc['apellido'],
             "userName": user_doc['userName'],
             "telefono": user_doc['telefono'],
-            "email": user_doc['email'],
-            "password": user_doc['password']
+            "email": user_doc['email']
         }
         # Validar la contraseña
         if not bcrypt.checkpw(user_instance.password.encode('utf-8'), user_doc['password'].encode('utf-8')):
